@@ -1,0 +1,67 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width:100vw;
+    height: 100vh;
+    border: 2px solid black;
+}
+.prompt{
+    width: 700px;
+    height: 50px;
+    
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   bottom: 30px;
+   left:450px;
+    
+}
+
+
+.prompt textarea{
+    width:90%;
+    height:90%;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 6px 6px 6px 6px #888888;
+    padding-left: 10px;
+    font-size: 1rem;
+  
+    padding-top: 10px;
+}
+
+.send-icon{
+    width:10%;
+    height:90%;
+    /* border: 2px solid black; */
+    position: absolute;
+    right:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:rgb(71, 70, 69);
+}
+
+
+.output{
+    width:600px;
+    height:500px;
+    margin: auto;
+    margin-top: 70px;
+   
+}
+
+.output textarea{
+    width:100%;
+    height: 100%;
+}
+
+textarea{  resize: none;}
