@@ -13,9 +13,10 @@ function App() {
   const [response,setResponse] = useState("")
 
 
-const submiQuery = async ()=>{
+const submitQuery = async ()=>{
 
   const data = {query}
+  setQuery("");
   
    try{
   const response = await fetch(API_URL,{
@@ -38,7 +39,7 @@ const submiQuery = async ()=>{
    catch(err){
     console.log(err);
    }
-
+ 
 
 }
 
@@ -46,8 +47,9 @@ const submiQuery = async ()=>{
   return (
    
   <div>
+    <h1> MY AI </h1>
     <Output result={response}/>
-  <Prompt setQuery = {setQuery} submitData = {submiQuery}/>
+  <Prompt setQuery = {setQuery} submitData = {submitQuery} query = {query}/>
   </div>
   );
 }

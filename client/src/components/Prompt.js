@@ -4,11 +4,13 @@ import React from 'react'
 
 function Prompt(props) {
 
-  const {setQuery,submitData} = props;
+  const {setQuery,submitData,query} = props;
   return (
     <div className="prompt">
      <textarea placeholder='Send a message' 
      
+     value={query}
+
      onChange={(ev)=>setQuery(ev.target.value)}
      
      >
