@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from 'react';
 
 function Loading() {
-  const [spanColor1, setSpanColor1] = useState("black");
-  const [spanColor2, setSpanColor2] = useState("black");
-  const [spanColor3, setSpanColor3] = useState("black");
+  const [spanProp1, setSpanProp1] = useState({color:"black",sizeX:"1",sizeY:"1"});
+  const [spanProp2, setSpanProp2] = useState({color:"black",sizeX:"1",sizeY:"1"});
+  const [spanProp3, setSpanProp3] = useState({color:"black",sizeX:"1",sizeY:"1"});
 
-  const spans = [setSpanColor1, setSpanColor2, setSpanColor3];
+  const spans = [setSpanProp1, setSpanProp2, setSpanProp3];
   let index = 0;
 
   const changeColor = () => {
     for (let i = 0; i < 3; i++) {
-      if (i !== index) spans[i]("black");
+      if (i !== index) spans[i]({color:"black",sizeX:"1",sizeY:"1"});
     }
 
-    spans[index]("green");
+    spans[index]({color:"green",sizeX:"1.3",sizeY:"1.3"});
     index = (index + 1) % 3;
   };
 
   useEffect(() => {
-    const intervalId = setInterval(changeColor, 1000); // Change color every 1 second
-
+    const intervalId = setInterval(changeColor, 900); // Change color every 1 second
+   
     return () => {
       clearInterval(intervalId); // Clear the interval when the component unmounts
     };
@@ -27,9 +27,9 @@ function Loading() {
 
   return (
     <div className="container">
-      <span id="span-1" style={{ backgroundColor: spanColor1 }}></span>
-      <span id="span-2" style={{ backgroundColor: spanColor2 }}></span>
-      <span id="span-3" style={{ backgroundColor: spanColor3 }}></span>
+      <span id="span-1" style={{ backgroundColor:spanProp1.color,transform:`scale(${spanProp1.sizeX},${spanProp1.sizeY})` }}></span>
+      <span id="span-2" style={{ backgroundColor:spanProp2.color,transform:`scale(${spanProp2.sizeX},${spanProp2.sizeY})` }}></span>
+      <span id="span-3" style={{ backgroundColor:spanProp3.color,transform:`scale(${spanProp3.sizeX},${spanProp3.sizeY})`}}></span>
     </div>
   );
 }
