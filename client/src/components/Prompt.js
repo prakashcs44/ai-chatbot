@@ -28,4 +28,4 @@ function Prompt(props) {
   )
 }
 
-export default Prompt
+export default Prompt;
